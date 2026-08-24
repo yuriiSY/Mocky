@@ -20,7 +20,6 @@ public class DynamicMockService {
     }
 
     public ResponseEntity<String> processMockRequest(String path, String method) {
-        // 1. Поиск в БД
         Optional<MockEndpoint> mockOpt = mockRepository.findByPathAndMethod(path, method);
 
         if (mockOpt.isEmpty()) {
